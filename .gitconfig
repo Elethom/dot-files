@@ -1,0 +1,33 @@
+[user]
+	name = Elethom Hunter
+	email = elethomhunter@gmail.com
+[credential]
+	helper = osxkeychain
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	br = branch
+	ca = commit -a
+	s = status
+	mg = merge
+	tg = tag
+	st = stash
+	ps = push
+	pl = pull
+	cl = clone
+	sm = submodule
+	caa = commit -a --amend
+	a = add
+	r = rm
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	al = alias
+	gi = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[diff "localizablestrings"]
+    textconv = "iconv -f utf-16 -t utf-8"
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[diff]
+	tool = vimdiff
+[push]
+	default = current
