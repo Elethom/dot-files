@@ -1,0 +1,7 @@
+set whichwrap+=h,l
+set ignorecase
+set smartcase
+nmap 0 ^
+nmap ^ 0
+map zc :xccmd fold<cr>
+map zo :xccmd unfold<cr>
