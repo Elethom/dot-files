@@ -1,0 +1,31 @@
+# Slack
+cmd - return [
+  "slack" : skhd -k "f6"
+]
+ctrl - tab [
+  "slack" : skhd -k "alt - down"
+]
+ctrl + shift - tab [
+  "slack" : skhd -k "alt - up"
+]
+ctrl - 0x32 [
+  "slack" : skhd -k "alt + shift - down"
+]
+ctrl + shift - 0x32 [
+  "slack" : skhd -k "alt + shift - up"
+]
+
+# Emacs
+ctrl - n [
+  "omnifocus" : skhd -k "down"
+  "slack" : skhd -k "down"
+]
+ctrl - p [
+  "omnifocus" : skhd -k "up"
+  "slack" : skhd -k "up"
+]
+
+# VIM as Xcode
+cmd + ctrl - e [
+  "terminal" : skhd -k "alt - e"; skhd -t "b"; skhd -t ";rn"
+]

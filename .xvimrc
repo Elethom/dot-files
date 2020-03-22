@@ -1,7 +1,11 @@
+set cursorline
 set whichwrap+=h,l
 set ignorecase
 set smartcase
+imap jk <Esc>
+vmap jk <Esc>
 nmap 0 ^
 nmap ^ 0
 map zc :xccmd fold<cr>
 map zo :xccmd unfold<cr>
+set laststatus=2
