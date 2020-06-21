@@ -11,7 +11,7 @@ rchome(){
   ln -s "$PWD/$1" ~/"$1"
 }
 
-for i in *; do rchome "$i"; done
+for i in .[^.]*; do rchome "$i"; done
 ```
 
 Turn file into symlink to dot-files:
