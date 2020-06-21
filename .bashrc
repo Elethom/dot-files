@@ -2,7 +2,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-(( ${BASH_VERSINFO[0]} >=3 )) &&  shopt -s globstar
+(( ${BASH_VERSINFO[0]} >=4 )) && shopt -s globstar
 shopt -s extglob
 
 export EDITOR=vim PAGER=less
@@ -13,6 +13,17 @@ export EDITOR=vim PAGER=less
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
