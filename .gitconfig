@@ -38,7 +38,7 @@
     pst = push --tags
     psf = push -f
     psft = push -f --tags
-    pl = pull
+    pl = pull --rebase=merges
     r = rm -r --cached
     rf = rm -rf
     rao = remote add origin
