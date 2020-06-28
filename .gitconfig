@@ -36,8 +36,8 @@
     ps = push
     psdt = push --delete
     pst = push --tags
-    psf = push -f
-    psft = push -f --tags
+    psf = push --force-with-lease
+    psft = push --force-with-lease --tags
     pl = pull --rebase=merges
     r = rm -r --cached
     rf = rm -rf
@@ -69,6 +69,7 @@
     smudge = git-media-smudge %f
 [diff]
     tool = vimdiff
+	algorithm = histogram
 [push]
     default = current
 [core]
