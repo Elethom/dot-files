@@ -38,7 +38,7 @@
     pst = push --tags
     psf = push --force-with-lease
     psft = push --force-with-lease --tags
-    pl = pull --rebase=merges
+    pl = pull
     r = rm -r --cached
     rf = rm -rf
     rao = remote add origin
@@ -85,5 +85,8 @@
     gpgsign = true
 [rebase]
 	abbreviateCommands = true
+    autoStash = true
 [merge]
 	ff = only
+[pull]
+    rebase = merges
