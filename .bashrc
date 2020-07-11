@@ -51,3 +51,11 @@ rcify(){
     mv -- "$1" ~/Github/dot-files/"$1"
     ln -sf -- ~/Github/dot-files/"$1" "$1"
 }
+
+java_fx() {
+    java --module-path /Library/Java/JavaVirtualMachines/jdk-14.jdk/Contents/Home/lib/javafx --add-modules ALL-MODULE-PATH "$@"
+}
+
+mca() {
+    java_fx -jar ~/Downloads/Safari/mcaselector-1.12.jar "$@";
+}

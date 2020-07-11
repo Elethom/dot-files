@@ -3,9 +3,9 @@ alias d.="cd .."
 # ls stuffs
 eval "$(gdircolors -b)"
 alias l="gls -F --color=auto"
-alias lr="gls -FR"
-alias la="gls -aF"
-alias ll="gls -aFl"
+alias lr="gls --color=auto -FR"
+alias la="gls --color=auto -aF"
+alias ll="gls --color=auto -aFl"
 alias ls="gls --color=auto"
 # ❤️
 alias grep="grep --color=auto"
@@ -44,3 +44,5 @@ alias heat="yes > /dev/null & yes > /dev/null & yes > /dev/null & yes > /dev/nul
 alias cool="killall yes"
 
 alias dst="~/Documents/Klei/DoNotStarveTogether/nocmdrun.sh"
+
+alias mefi="sudo diskutil mount $(diskutil list | grep "Container $(df | grep '/$' | grep -o 'disk[0-9]')" | grep -o 'disk[0-9]s[0-9]$' | cut -b 1-6)1"
