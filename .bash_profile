@@ -13,8 +13,10 @@ export GPG_TTY=$(tty)
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
     export GPG_AGENT_INFO
 else
-    eval $( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf )
+    eval "$( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf )"
 fi
+eval "$(ssh-agent -s)"
+ssh-add -A
 
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"

@@ -46,3 +46,4 @@ alias cool="killall yes"
 alias dst="~/Documents/Klei/DoNotStarveTogether/nocmdrun.sh"
 
 alias mefi="sudo diskutil mount $(diskutil list | grep "Container $(df | grep '/$' | grep -o 'disk[0-9]')" | grep -o 'disk[0-9]s[0-9]$' | cut -b 1-6)1"
+alias vefi="vim /Volumes/EFI/EFI/OC/config.plist"
