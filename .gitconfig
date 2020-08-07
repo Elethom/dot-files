@@ -55,6 +55,7 @@
     rsh1 = reset --hard HEAD~1
     s = status
     sm = submodule
+    smui = submodule update --init --recursive --depth 1 --jobs 12
     st = stash
     std = stash drop
     stl = stash list
