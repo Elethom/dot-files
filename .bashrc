@@ -10,10 +10,6 @@ export EDITOR=vim PAGER=less
 # added by travis gem
 [ -f /Users/Elethom/.travis/travis.sh ] && source /Users/Elethom/.travis/travis.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 if type brew &>/dev/null; then
   HOMEBREW_PREFIX="$(brew --prefix)"
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
@@ -25,15 +21,15 @@ if type brew &>/dev/null; then
   fi
 fi
 
+GIT_PS1_SHOWCOLORHINTS=1
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/git-prompt.sh ] && source ~/.config/git-prompt.sh || __git_ps1(){ return $?; }
 
 _ps1_ret() { local _r=$?; ((_r)) && printf '%d|' "$_r"; return "$_r"; }
-_ps1_git() { local _r=$? br=$(git branch 2>/dev/null | grep '^\* '); printf '%s' "${br/#\* /@}"; return "$_r"; }   
-declare -- PS1='$(_ps1_ret)\h:\W$(_ps1_git) \u\$ '
+declare -- PS1='$(_ps1_ret)\h:\W$(__git_ps1 " (%s)") \u\$ '
 #declare -- PS1='\h::\W$(_ps1_git) \u\$ '
 
-alias px1='all_proxy=socks5://localhost:7891'
-alias px2='all_proxy=socks5://localhost:23334'
+alias pxn='all_proxy='
 
 make_bare() {
     if [[ ! -d $1/.git ]]; then
