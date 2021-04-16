@@ -15,7 +15,7 @@ ctrl + shift - 0x32 [
   "slack" : skhd -k "alt + shift - up"
 ]
 
-# Emacs
+# Emacs Navigation
 ctrl - n [
   "omnifocus" : skhd -k "down"
   "slack" : skhd -k "down"
@@ -29,3 +29,8 @@ ctrl - p [
 cmd + ctrl - e [
   "terminal" : skhd -k "alt - e"; skhd -t "b"; skhd -t ";rn"
 ]
+
+# OS
+# - Switch Audio
+ctrl + alt - sound_down : if [ "$(SwitchAudioSource -c -t output)" == "Built-in Output" ]; then SwitchAudioSource -t output -s "DisplayPort"; SwitchAudioSource -t input -s "HD Webcam C525"; else SwitchAudioSource -t output -s "Built-in Output"; SwitchAudioSource -t input -s "Built-in Input"; fi
+ctrl + alt - sound_up : if [ "$(SwitchAudioSource -c -t output)" == "Built-in Output" ]; then SwitchAudioSource -t output -s "DisplayPort"; SwitchAudioSource -t input -s "HD Webcam C525"; else SwitchAudioSource -t output -s "Built-in Output"; SwitchAudioSource -t input -s "Built-in Input"; fi
