@@ -34,8 +34,10 @@ alias br=brew
 alias cg=carthage
 alias cgb="carthage bootstrap"
 alias cgbi="carthage bootstrap --platform iOS"
+alias cgbm="carthage bootstrap --platform macOS"
 alias cgu="carthage update"
 alias cgui="carthage update --platform iOS"
+alias cgum="carthage update --platform macOS"
 
 alias clderived="sudo rm -rf ~/Library/Developer/Xcode/DerivedData"
 alias xcode-sign="sudo codesign -f -s XcodeSigner /Applications/Xcode.app"
@@ -45,5 +47,6 @@ alias cool="killall yes"
 
 alias dst="~/Documents/Klei/DoNotStarveTogether/nocmdrun.sh"
 
-alias mefi="sudo diskutil mount $(diskutil list | grep "Container $(df | grep '/$' | grep -o 'disk[0-9]')" | grep -o 'disk[0-9]s[0-9]$' | cut -b 1-6)1"
+alias mefi='sudo diskutil mount $(diskutil list | grep "Container $(df | grep "/$" | grep -o "disk[0-9]")" | grep -o "disk[0-9]s[0-9]$" | cut -b 1-6)1'
 alias vefi="vim /Volumes/EFI/EFI/OC/config.plist"
+alias kver='ls -1 /Volumes/EFI/EFI/OC/Kexts/*.kext/Contents/Info.plist | while read file; do echo $file | grep -Po "Kexts/\K.*?(?=.kext)"; cat $file | grep -Pzo "(?s)CFBundleVersion.*?<string>\K(.*?)(?=</string>)"; echo; done'

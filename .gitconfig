@@ -20,9 +20,9 @@
     co = checkout
     cob = checkout -b
     cp = cherry-pick
-    d = diff
-    dh = diff HEAD
-    dh1 = diff HEAD~1
+    d = diff -b --word-diff=color --color-moved
+    dh = diff -b --word-diff=color --color-moved HEAD
+    dh1 = diff -b --word-diff=color --color-moved HEAD~1
     f = fetch
     fa = fetch --all
     fap = fetch --all -p
@@ -37,6 +37,7 @@
     psdt = push --delete
     pst = push --tags
     psf = push --force-with-lease
+    psff = push --force
     psft = push --force-with-lease --tags
     pl = pull
     r = rm -r --cached
