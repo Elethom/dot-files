@@ -80,7 +80,7 @@ map <leader>xxx :echo "hi<"
   \. synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " FileType
-autocmd FileType javascript,json setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript,json,typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Plugins
 call plug#begin('~/.vim/plugged')
