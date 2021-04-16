@@ -21,7 +21,11 @@ if type brew &>/dev/null; then
   fi
 fi
 
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_HIDE_IF_PWD_IGNORED=1
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.config/git-prompt.sh ] && source ~/.config/git-prompt.sh || __git_ps1(){ return $?; }
 
